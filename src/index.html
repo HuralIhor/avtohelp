@@ -98,56 +98,63 @@
             </ul>
         </div>
     </header>
-<style>
-      .flip-card {
-    position: relative;
-    /* width: 100%;
+    <style>
+        .flip-card {
+            position: relative;
+            z-index: 2;
+            top: 100px;
+            left: 50px;
+            text-align: center;
+            transform-style: preserve-3d;
+            animation: rotateCard 5s infinite linear;
+            width: 220px;
+            filter: sepia(1);
+        }
+
+        @keyframes rotateCard {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            /* width: 100%;
     height: 100%; */
-    z-index: 2;
-    text-align: center;
-    transform-style: preserve-3d;
-    animation: rotateCard 5s infinite linear;
-  }
+            backface-visibility: hidden;
+        }
+        .flip-card-front img, 
+        .flip-card-back img {
+            width: 220px;
+        }
+        .flip-card-front {
+            color: black;
+        }
 
-  @keyframes rotateCard {
-    0% {
-      transform: rotateY(0deg);
-    }
-    100% {
-      transform: rotateY(360deg);
-    }
-  }
-
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    /* width: 100%;
-    height: 100%; */
-    backface-visibility: hidden;
-  }
-
-  .flip-card-front {
-    color: black;
-  }
-
-  .flip-card-back {
-    color: white;
-    transform: rotateY(180deg);
-  }
-</style>
+        .flip-card-back {
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
     <main>
         <div class="promo">
 
             <div class="flip-card">
                 <div class="flip-card-front">
-                  <img src="/img/tools.png" alt="Avatar">
+                    <img src="img/tools.png" alt="Avatar">
                 </div>
                 <div class="flip-card-back">
-                 <img src="/img/tools.png" alt="Avatar">
+                    <img src="img/tools.png" alt="Avatar">
                 </div>
-              </div>
+            </div>
             <picture>
-                <source media="(min-width:768px)" srcset="/img/fon_desc1.jpg">
-                <img class="main_img" decoding="async" src="/img/fon_tab.webp" alt="avtohelp.lviv.ua">
+                <source media="(min-width:768px)" srcset="img/fon_desc1.jpg">
+                <img class="main_img" decoding="async" src="img/fon_tab.webp" alt="avtohelp.lviv.ua">
             </picture>
         </div>
 
