@@ -94,6 +94,7 @@ main {
         @media(min-width: 768px) {
             height: 95vh;
         }
+
         @media (orientation: landscape) {
             min-height: 500px;
         }
@@ -124,6 +125,10 @@ main {
             font-size: calc(50px + 35 * ((100vw - 320px) / (1120 - 320)));
         }
 
+        p {
+            color: #FEC919;
+        }
+
         &>ul {
             //   transform: rotate3d(1, 1, 0, 16deg); 
             /* border: 1px solid red; */
@@ -139,12 +144,14 @@ main {
             li {
                 margin-bottom: 5px;
                 line-height: 150%;
+                color: #FEC919;
 
                 ul {
                     list-style-type: circle;
 
                     li {
                         margin-bottom: 5px;
+                        color: #FEC919;
 
                     }
                 }
