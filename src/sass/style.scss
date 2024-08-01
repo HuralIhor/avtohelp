@@ -116,9 +116,8 @@ main {
         max-width: 1120px;
         margin: 0 auto;
         padding: 50px 10px;
-
+        color: #FEC919;
         h1 {
-            color: #fff;
             text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
             font-family: GTA;
             font-weight: 600;
@@ -144,14 +143,13 @@ main {
             li {
                 margin-bottom: 5px;
                 line-height: 150%;
-                color: #FEC919;
+                
 
                 ul {
                     list-style-type: circle;
 
                     li {
                         margin-bottom: 5px;
-                        color: #FEC919;
 
                     }
                 }
