@@ -32,5 +32,6 @@ function handleOrientation(event) {
         const newX = item.initialX + offsetX;
         const newY = item.initialY + offsetY;
         item.element.style.transform = `translate(${newX}px, ${newY}px)`;
+        console.log(1);
     });
 }
