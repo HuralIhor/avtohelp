@@ -28,7 +28,8 @@ function handleOrientation(event) {
 
     // Оновлення позиції кожного елемента
     initialPositions.forEach(item => {
-        item.element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-        item.style.border = '1px solid red';
+        const newX = item.initialX + offsetX;
+        const newY = item.initialY + offsetY;
+        item.element.style.transform = `translate(${newX}px, ${newY}px)`;
     });
 }

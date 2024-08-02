@@ -48,13 +48,18 @@ header {
         margin: 0 auto;
         padding: 5px 10px;
         .logo {
+            position: relative;
             width: 100px;
             display: flex;
             @media(min-width: 375px) {
                 width: 160px;
             }
             img {
-                width: 100%;
+                
+                width: 100px;
+                @media(min-width: 375px) {
+                    width: 160px;
+                }
             }
         }
         ul.nav {
@@ -135,9 +140,10 @@ main {
     }
 }
 .animateMe {
-    position: relative; 
-    top: 0;
-    left: 0;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 footer {
     height: 100px;
