@@ -11,13 +11,6 @@ elements.forEach(element => {
     });
 });
 
-// Перевірка підтримки події deviceorientation
-if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', handleOrientation);
-} else {
-    console.log("DeviceOrientationEvent не підтримується вашим пристроєм.");
-}
-
 function handleOrientation(event) {
     const beta = event.beta; // Обертання навколо X-осі (-180 до 180 градусів)
     const gamma = event.gamma; // Обертання навколо Y-осі (-90 до 90 градусів)
@@ -28,8 +21,27 @@ function handleOrientation(event) {
 
     // Оновлення позиції кожного елемента
     initialPositions.forEach(item => {
-        const newX = item.initialX + offsetX;
-        const newY = item.initialY + offsetY;
-        item.element.style.transform = `translate(${newX}px, ${newY}px)`;
+        item.element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
     });
 }
+
+// Перевірка підтримки події deviceorientation та запит дозволу
+function requestPermission() {
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission()
+            .then(permissionState => {
+                if (permissionState === 'granted') {
+                    window.addEventListener('deviceorientation', handleOrientation);
+                } else {
+                    console.log('Доступ до DeviceOrientationEvent не наданий');
+                }
+            })
+            .catch(console.error);
+    } else {
+        // Необхідний для пристроїв, які не потребують явного запиту дозволу (наприклад, Android)
+        window.addEventListener('deviceorientation', handleOrientation);
+    }
+}
+
+// Запит дозволу при завантаженні сторінки
+window.addEventListener('load', requestPermission);
