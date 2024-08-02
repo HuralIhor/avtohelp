@@ -19,7 +19,6 @@ if (window.DeviceOrientationEvent) {
 }
 
 function handleOrientation(event) {
-    const alpha = event.alpha; // Обертання навколо Z-осі (0 до 360 градусів)
     const beta = event.beta; // Обертання навколо X-осі (-180 до 180 градусів)
     const gamma = event.gamma; // Обертання навколо Y-осі (-90 до 90 градусів)
 
@@ -29,9 +28,7 @@ function handleOrientation(event) {
 
     // Оновлення позиції кожного елемента
     initialPositions.forEach(item => {
-        const newX = item.initialX + offsetX;
-        const newY = item.initialY + offsetY;
-        item.element.style.transform = `translate(${newX}px, ${newY}px)`;
-        console.log(1);
+        item.element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        item.style.border = '1px solid red';
     });
 }
