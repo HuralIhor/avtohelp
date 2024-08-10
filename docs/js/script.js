@@ -94,13 +94,14 @@ function requestPermission() {
         removePermissionEventListeners();
     }
 
-    
+
 }
 
 function removePermissionEventListeners() {
     document.body.removeEventListener('click', requestPermission);
     document.body.removeEventListener('scroll', requestPermission);
 }
+
 
 // Запит дозволу при натисканні або скролі
 document.body.addEventListener('click', requestPermission, { once: true });
