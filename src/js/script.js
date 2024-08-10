@@ -102,7 +102,8 @@ function removePermissionEventListeners() {
 
 // Запит дозволу при натисканні або скролі
 document.body.addEventListener('click', requestPermission, { once: true });
-document.body.addEventListener('scroll', requestPermis
+document.body.addEventListener('scroll', requestPermission, { once: true });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('data.json')
