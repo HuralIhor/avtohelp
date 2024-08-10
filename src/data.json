@@ -1,0 +1,18 @@
+[
+    {
+      "image": "image1.jpg",
+      "title": "Slide 1",
+      "description": "Description for Slide 1"
+    },
+    {
+      "image": "image2.jpg",
+      "title": "Slide 2",
+      "description": "Description for Slide 2"
+    },
+    {
+      "image": "image3.jpg",
+      "title": "Slide 3",
+      "description": "Description for Slide 3"
+    }
+  ]
+  
