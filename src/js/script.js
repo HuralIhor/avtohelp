@@ -93,6 +93,8 @@ function requestPermission() {
         window.addEventListener('deviceorientation', handleOrientation);
         removePermissionEventListeners();
     }
+
+    
 }
 
 function removePermissionEventListeners() {
