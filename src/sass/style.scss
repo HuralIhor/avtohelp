@@ -102,6 +102,11 @@ main {
         margin: 0 auto;
         padding: 50px 10px;
         color: #FEC919;
+        & > * {
+            display: inline-block;
+            position: relative;
+            transition: transform 0.3s ease-out;
+        }
         h1 {
             color: #fff;
             text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
