@@ -102,10 +102,12 @@ main {
         margin: 0 auto;
         padding: 50px 10px;
         color: #FEC919;
+        perspective: 1000px; 
         & > * {
             display: inline-block;
             position: relative;
-            transition: transform 0.3s ease-out;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
         }
         h1 {
             color: #fff;
