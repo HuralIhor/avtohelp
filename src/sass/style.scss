@@ -194,6 +194,141 @@ main {
             z-index: -1;
         }
     }
+
+    .reviews {
+        position: relative;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0px 10px 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: hidden;
+        min-width: 0;
+        gap: 20px;
+        align-items: center;
+
+        // background: #1a1a1a;
+        h2 {
+            width: 100%;
+            color: #fec919;
+            font-size: 45px;
+            // text-shadow: 2px 2px 0 #ff0066, 4px 4px 0 #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin: 0 auto;
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            text-align: center;
+
+            @media(min-width: 768px) {
+                width: 40%;
+            }
+            @media(min-width: 1124px) {
+                width: 28%;
+            }
+            label {
+                font-weight: bold;
+                color: #FEC919;
+                display: block;
+                margin-bottom: 10px;
+                text-align: left;
+            }
+
+            input,
+            textarea {
+                width: calc(100% - 22px);
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #333;
+                border-radius: 5px;
+                background: #000;
+                color: #fff;
+                font-size: 16px;
+            }
+
+            input::placeholder,
+            textarea::placeholder {
+                color: #aaa;
+            }
+
+            button {
+                background: #ff9900;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            button:hover {
+                background: #e68a00;
+            }
+        }
+
+        .swiper-container {
+            position: relative;
+            padding: 30px 15px;
+            width: 100%;
+            overflow: hidden;
+
+            @media(min-width: 768px) {
+                width: calc(60% - 20px);
+            }
+            @media(min-width: 1124px) {
+                width: calc(72% - 20px);
+            }
+
+            .swiper-slide {
+                padding: 30px;
+                transform-style: preserve-3d;
+                animation: rotate23D 9s infinite linear;
+                box-shadow: -2px 3px 16px 0px #FEC919;
+                &:hover {
+                    animation: none;
+                }
+                h3 {
+                    color: #FEC919;
+
+                }
+                h4 {
+                    color: #aaa;
+                }
+                p {
+                    color: #f5bd69e1;
+                }
+            }
+
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                top: var(--swiper-navigation-top-offset, 76%);
+            }
+
+            .swiper-button-prev:after,
+            .swiper-button-next:after {
+                color: #fec919;
+                font-size: 55px;
+                transform-style: preserve-3d;
+                animation: rotate3D  5s infinite linear;
+            }
+
+            .swiper-pagination-bullet {
+                background: #f59300a8;
+            }
+
+            .swiper-pagination-bullet-active {
+                background: #fec919;
+            }
+        }
+    }
 }
 
 .animateMe {
@@ -229,7 +364,32 @@ main {
         transform: rotateY(0deg) rotateX(0deg);
     }
 }
+@keyframes rotate23D {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+        top: 0;
+    }
 
+    25% {
+        top: 10px;
+        transform: rotateY(25deg) rotateX(15deg);
+    }
+
+    50% {
+        top: 5px;
+        transform: rotateY(30deg) rotateX(0deg);
+    }
+
+    75% {
+        top: 10px;
+        transform: rotateY(15deg) rotateX(15deg);
+    }
+
+    100% {
+        top: 0;
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+}
 footer {
     height: 100px;
     text-align: center;
