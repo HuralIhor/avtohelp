@@ -106,19 +106,53 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 document.querySelector('form').addEventListener('submit', function(e) {
   e.preventDefault();
+    // Отримуємо значення полів форми
+    let name = document.getElementById('name').value;
+    let service = document.getElementById('service').value;
+    let feedback = document.getElementById('feedback').value;
 
-  fetch('sendler/telegram.php', {
-      method: 'POST',
-      body: new FormData(this)
-  })
-  .then(response => {
-      if (response.ok) {
-          // document.querySelector('.overlay').style.display = 'block';
-          // document.getElementById('thanks').style.display = 'block';
-          document.querySelector('form').reset();
-      } else {
-          console.error('Server error:', response.statusText);
-      }
-  })
-  .catch(error => console.error('Fetch error:', error));
+    // Формуємо повідомлення для надсилання в Telegram
+    let message = `<b>Ім'я:</b> ${name}%0A<b>Послуга:</b> ${service}%0A<b>Відгук:</b> ${feedback}`;
+
+    // Токен вашого Telegram бота
+    const token = "7545295821:AAEhsnPNNcFeDBUntP-xyIbJUfCtjR9IaOU"; // замініть на ваш токен
+    // ID чату або каналу
+    const chat_id = "555618468"; // замініть на ваш chat_id
+
+    // URL для надсилання повідомлення
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&parse_mode=html&text=${message}`;
+
+    // Відправка запиту на Telegram API
+    fetch(url, {
+        method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            alert('Відгук надіслано успішно!');
+            document.getElementById('feedbackForm').reset();
+        } else {
+            alert('Виникла помилка при надсиланні відгуку.');
+            console.error('Telegram API error:', data);
+        }
+    })
+    .catch(error => {
+        alert('Помилка під час відправки. Перевірте з\'єднання з інтернетом.');
+        console.error('Fetch error:', error);
+    });
+
+  // fetch('sendler/telegram.php', {
+  //     method: 'POST',
+  //     body: new FormData(this)
+  // })
+  // .then(response => {
+  //     if (response.ok) {
+  //         // document.querySelector('.overlay').style.display = 'block';
+  //         // document.getElementById('thanks').style.display = 'block';
+  //         document.querySelector('form').reset();
+  //     } else {
+  //         console.error('Server error:', response.statusText);
+  //     }
+  // })
+  // .catch(error => console.error('Fetch error:', error));
 });
