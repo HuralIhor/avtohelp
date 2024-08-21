@@ -115,9 +115,9 @@ document.querySelector('form').addEventListener('submit', function(e) {
     let message = `<b>Ім'я:</b> ${name}%0A<b>Послуга:</b> ${service}%0A<b>Відгук:</b> ${feedback}`;
 
     // Токен вашого Telegram бота
-    const token = "7545295821:AAEhsnPNNcFeDBUntP-xyIbJUfCtjR9IaOU"; // замініть на ваш токен
+    const token = "7207235159:AAH3UHIuD6IZDkA8BxCl71nDad2pjyEY8PE"; // замініть на ваш токен
     // ID чату або каналу
-    const chat_id = "555618468"; // замініть на ваш chat_id
+    const chat_id = "6553863452"; // замініть на ваш chat_id
 
     // URL для надсилання повідомлення
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&parse_mode=html&text=${message}`;
