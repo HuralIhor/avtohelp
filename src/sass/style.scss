@@ -1,12 +1,12 @@
 @import 'libs/bootstrap-reboot.min';
 
-@font-face {
-    font-family: 'GTA';
-    src: url('../font/GTARussian-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'GTA';
+//     src: url('../font/Roboto-Bold.woff2') format('woff2');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
 
 @font-face {
     font-family: 'RDR Lino';
@@ -17,7 +17,7 @@
 }
 
 * {
-    font-family: 'RDR Lino';
+    font-family: 'CTA';
     margin: 0;
     padding: 0;
 }
@@ -113,95 +113,101 @@ main {
     }
 
     .services {
-        position: relative;
-        background-attachment: fixed;
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 50px 10px;
-        color: #FEC919;
-        perspective: 1000px;
+        background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==) center center/cover no-repeat;
+        &__inner {
+    // font-family: 'GTA';
 
-        &>* {
-            display: inline-block;
             position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.1s ease-out;
-        }
-
-        h1 {
-            color: #fff;
-            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-            font-family: GTA;
-            font-weight: 500;
-            font-size: calc(50px + 35 * ((100vw - 320px) / (1120 - 320)));
-        }
-
-        p {
+            background-attachment: fixed;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 50px 10px 30px;
             color: #FEC919;
-            z-index: 2;
-        }
-
-        .list {
-            display: flex;
-            flex-direction: row;
-
-            ul {
-                width: 80%;
-                max-width: 730px;
-                margin-left: 0;
-                padding: 10px;
-
-                @media(min-width: 450px) {
-                    margin-left: 2rem;
-                }
-
-                li {
-                    margin-bottom: 5px;
-                    line-height: 150%;
-                    color:#fff;
-
-                    ul {
-                        width: 100%;
-                        list-style-type: circle;
-
-                        li {
-                            margin-bottom: 5px;
-                            color: #fec919;
+            perspective: 1000px;
+            filter: drop-shadow(2px 4px 6px black);
+            &>* {
+                display: inline-block;
+                position: relative;
+                transform-style: preserve-3d;
+                transition: transform 0.1s ease-out;
+            }
+    
+            h1 {
+                color: #fff;
+                text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+                // font-family: GTA;
+                font-weight: 500;
+                font-size: calc(50px + 35 * ((100vw - 320px) / (1120 - 320)));
+            }
+    
+            p {
+                color: #FEC919;
+                z-index: 2;
+            }
+    
+            .list {
+                display: flex;
+                flex-direction: row;
+    
+                ul {
+                    width: 80%;
+                    max-width: 730px;
+                    margin-left: 0;
+                    padding: 10px;
+    
+                    @media(min-width: 450px) {
+                        margin-left: 2rem;
+                    }
+    
+                    li {
+                        margin-bottom: 5px;
+                        line-height: 150%;
+                        color:#fff;
+    
+                        ul {
+                            width: 100%;
+                            list-style-type: circle;
+    
+                            li {
+                                margin-bottom: 5px;
+                                color: #fec919;
+                            }
                         }
                     }
                 }
-            }
-
-            .list__icons {
-                width: 20%;
-                display: flex;
-                gap: 30px;
-                flex-direction: column;
-
-                img {
-                    width: 100%;
-                    position: relative;
-                    max-width: 64px;
-                    transform-style: preserve-3d;
-                    animation: rotate3D 5s infinite linear;
+    
+                .list__icons {
+                    width: 20%;
+                    display: flex;
+                    gap: 30px;
+                    flex-direction: column;
+    
+                    img {
+                        width: 100%;
+                        position: relative;
+                        max-width: 64px;
+                        transform-style: preserve-3d;
+                        animation: rotate3D 5s infinite linear;
+                    }
                 }
             }
+    
+            img.fon {
+                position: absolute;
+                right: 0;
+                bottom: 50px;
+                filter: brightness(0.1);
+                z-index: -1;
+            }
         }
-
-        img.fon {
-            position: absolute;
-            right: 0;
-            bottom: 50px;
-            filter: brightness(0.1);
-            z-index: -1;
-        }
+       
     }
 
     .reviews {
         position: relative;
         max-width: 1120px;
         margin: 0 auto;
-        padding: 0px 10px 50px;
+        padding: 50px 10px 50px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -393,6 +399,7 @@ main {
     }
 }
 footer {
+    background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==) left center/contain no-repeat;
     height: 100px;
     text-align: center;
     display: flex;

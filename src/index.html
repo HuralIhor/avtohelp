@@ -102,24 +102,15 @@
 
     <main>
         <div class="promo">
-
-            <!-- <div class="flip-card">
-                <div class="flip-card-front">
-                    <img src="img/tools.png" alt="Avatar">
-                </div>
-                <div class="flip-card-back">
-                    <img src="img/tools.png" alt="Avatar">
-                </div>
-
-            </div> -->
             <picture>
                 <source media="(min-width:768px)" srcset="img/fon_desc2.webp">
                 <img class="main_img" decoding="async" src="img/fon_tab3.webp" alt="autohelp.lviv.ua">
             </picture>
         </div>
 
-        <div class="services">
-            <h1>ШВИДКА ТЕХНІЧНА ДОПОМОГА</h1>
+        <div class="services lozad"  data-background-image="img/mainBG.png">
+            <div class="services__inner">
+                <h1>ШВИДКА ТЕХНІЧНА ДОПОМОГА</h1>
             <p>Професійна техдопомога в дорозі: Швидко, надійно, без зайвого клопоту!</p>
 
             <div class="list">
@@ -200,13 +191,13 @@
             <p>
                 Забудьте про незручності на дорозі — ми професійнийно допоможемо вам швидко повернутися в дорогу!
                 Зв'яжіться з нами зараз і отримайте якісну допомогу, коли вона вам потрібна найбільше.</p>
-            <img src="img/fon2.jpg" data-src="img/fon2.jpg" data-srcset="img/fon2.jpg" alt="mechanic" class="lozad fon">
+            </div>
+            <!-- <img src="img/fon2.jpg" data-src="img/fon2.jpg" data-srcset="img/fon2.jpg" alt="mechanic" class="lozad fon"> -->
         </div>
 
         <div class="reviews">
 
             <h2>відгуки</h2>
-       
 
             <div class="swiper-container">
                 <div class="swiper-wrapper" id="swiper-wrapper"> 
@@ -217,14 +208,14 @@
             </div>
 
             <form>
-                <label for="name">Ім'я:</label>
-                <input type="text" id="name" name="name" placeholder="Ваше ім'я">
+                <label  for="name">Ім'я:</label>
+                <input required type="text" id="name" name="name" placeholder="Ваше ім'я">
     
                 <label for="service">Послуга:</label>
-                <input type="text" id="service" name="service" placeholder="Назва послуги">
+                <input required type="text" id="service" name="service" placeholder="Назва послуги">
     
                 <label for="feedback">Відгук:</label>
-                <textarea id="feedback" rows='3' name="feedback" placeholder="Ваш відгук"></textarea>
+                <textarea required id="feedback" rows='3' name="feedback" placeholder="Ваш відгук"></textarea>
     
                 <button type="submit">Відправити</button>
             </form>
