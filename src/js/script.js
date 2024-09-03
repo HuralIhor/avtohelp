@@ -1,50 +1,50 @@
-const elements = document.querySelectorAll('.services > *');
+// const elements = document.querySelectorAll('.services > *');
 
-function handleOrientation(event) {
-  const beta = event.beta; // Обертання навколо X-осі (-180 до 180 градусів)
-  const gamma = event.gamma; // Обертання навколо Y-осі (-90 до 90 градусів)
+// function handleOrientation(event) {
+//   const beta = event.beta; // Обертання навколо X-осі (-180 до 180 градусів)
+//   const gamma = event.gamma; // Обертання навколо Y-осі (-90 до 90 градусів)
 
-  // Обчислення зсуву з обмеженням до 5 пікселів і додавання 3D ефекту
-  const offsetX = Math.min(Math.max(-gamma * 0.1, -5), 5); // Зсув по горизонталі, інвертований
-  const offsetY = Math.min(Math.max(-beta * 0.1, -5), 5); // Зсув по вертикалі, інвертований
+//   // Обчислення зсуву з обмеженням до 5 пікселів і додавання 3D ефекту
+//   const offsetX = Math.min(Math.max(-gamma * 0.1, -5), 5); // Зсув по горизонталі, інвертований
+//   const offsetY = Math.min(Math.max(-beta * 0.1, -5), 5); // Зсув по вертикалі, інвертований
 
-  // Оновлення позиції кожного елемента
-  elements.forEach(item => {
-    item.style.transform = `rotateY(${offsetX}deg) rotateX(${offsetY}deg) translateZ(${offsetX}px)`;
-  });
-}
+//   // Оновлення позиції кожного елемента
+//   elements.forEach(item => {
+//     item.style.transform = `rotateY(${offsetX}deg) rotateX(${offsetY}deg) translateZ(${offsetX}px)`;
+//   });
+// }
 
-function requestPermission() {
-  if (typeof DeviceMotionEvent.requestPermission === 'function') {
-    DeviceMotionEvent.requestPermission()
-      .then(permissionState => {
-        if (permissionState === 'granted') {
-          window.addEventListener('deviceorientation', handleOrientation);
-          removePermissionEventListeners();
-        } else {
-          console.log('Доступ до DeviceOrientationEvent не наданий');
-        }
-      })
-      .catch(console.error);
-  } else {
-    // Необхідний для пристроїв, які не потребують явного запиту дозволу (наприклад, Android)
-    window.addEventListener('deviceorientation', handleOrientation);
-    removePermissionEventListeners();
-  }
-}
+// function requestPermission() {
+//   if (typeof DeviceMotionEvent.requestPermission === 'function') {
+//     DeviceMotionEvent.requestPermission()
+//       .then(permissionState => {
+//         if (permissionState === 'granted') {
+//           window.addEventListener('deviceorientation', handleOrientation);
+//           removePermissionEventListeners();
+//         } else {
+//           console.log('Доступ до DeviceOrientationEvent не наданий');
+//         }
+//       })
+//       .catch(console.error);
+//   } else {
+//     // Необхідний для пристроїв, які не потребують явного запиту дозволу (наприклад, Android)
+//     window.addEventListener('deviceorientation', handleOrientation);
+//     removePermissionEventListeners();
+//   }
+// }
 
-function removePermissionEventListeners() {
-  document.body.removeEventListener('click', requestPermission);
-  document.body.removeEventListener('scroll', requestPermission);
-}
+// function removePermissionEventListeners() {
+//   document.body.removeEventListener('click', requestPermission);
+//   document.body.removeEventListener('scroll', requestPermission);
+// }
 
-// Запит дозволу при натисканні або скролі
-document.body.addEventListener('click', requestPermission, {
-  once: true
-});
-document.body.addEventListener('scroll', requestPermission, {
-  once: true
-});
+// // Запит дозволу при натисканні або скролі
+// document.body.addEventListener('click', requestPermission, {
+//   once: true
+// });
+// document.body.addEventListener('scroll', requestPermission, {
+//   once: true
+// });
 
 
 document.addEventListener('DOMContentLoaded', function () {
