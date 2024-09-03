@@ -1,13 +1,5 @@
 @import 'libs/bootstrap-reboot.min';
 
-// @font-face {
-//     font-family: 'GTA';
-//     src: url('../font/Roboto-Bold.woff2') format('woff2');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
 @font-face {
     font-family: 'RDR Lino';
     src: url('../font/RDRLino-Regular.woff2') format('woff2');
@@ -92,46 +84,125 @@ main {
     .promo {
         border-bottom: 1px solid #FEC919;
         position: relative;
-        height: 75vh;
+        height: calc(100vh - 55px);
+        overflow: scroll;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('../img/fon_tab3.webp');
 
         @media(min-width: 768px) {
             height: 95vh;
+            background-image: url('../img/fon_desc2.webp');
+
         }
 
         @media (orientation: landscape) {
             min-height: 500px;
         }
 
-        img.main_img {
-            width: 100%;
-            object-fit: cover;
+        &.promo-darkened:before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
-            height: 100%;
+            width: 100%;
+            height: 100vh;
+
+            backdrop-filter: brightness(50%);
+
+        }
+
+        // &.promo-scrolled {
+        //     .services {
+        //         transform: translateY(-100%);
+        //     }
+        // }
+        // img.main_img {
+        //     width: 100%;
+        //     object-fit: cover;
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     height: 100%;
+        // }
+
+        .mouse {
+            width: 50px;
+            height: 90px;
+            border: 2px solid #FEC919;
+            border-radius: 60px;
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-sizing: border-box;
+            transition: transform .5s ease;
+
+            &::before {
+                content: '';
+                width: 12px;
+                height: 12px;
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #FEC919;
+                border-radius: 50%;
+                opacity: 1;
+                animation: wheel 2s infinite;
+            }
+
+            &.hidden {
+                opacity: 0;
+                transition: opacity .5s ease;
+
+            }
+        }
+
+        @keyframes wheel {
+            to {
+                opacity: 0;
+                top: 60px;
+            }
         }
     }
 
     .services {
-        background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==) center center/cover no-repeat;
+        // background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==) center center/cover no-repeat;
+
+
+        // position: absolute;
+        // top: 100%;
+        // left: 0;
+        margin-top: 100vh;
+        width: 100%;
+        transition: transform 0.5s ease;
+
+        &.promo-scrolled {
+            backdrop-filter: brightness(50%);
+
+        }
+
         &__inner {
-    // font-family: 'GTA';
+            // font-family: 'GTA';
 
             position: relative;
             background-attachment: fixed;
             max-width: 1120px;
             margin: 0 auto;
-            padding: 50px 10px 30px;
+            padding: 0 10px 30px;
             color: #FEC919;
             perspective: 1000px;
             filter: drop-shadow(2px 4px 6px black);
+
             &>* {
                 display: inline-block;
                 position: relative;
                 transform-style: preserve-3d;
                 transition: transform 0.1s ease-out;
             }
-    
+
             h1 {
                 color: #fff;
                 text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
@@ -139,35 +210,35 @@ main {
                 font-weight: 500;
                 font-size: calc(50px + 35 * ((100vw - 320px) / (1120 - 320)));
             }
-    
+
             p {
                 color: #FEC919;
                 z-index: 2;
             }
-    
+
             .list {
                 display: flex;
                 flex-direction: row;
-    
+
                 ul {
                     width: 80%;
                     max-width: 730px;
                     margin-left: 0;
                     padding: 10px;
-    
+
                     @media(min-width: 450px) {
                         margin-left: 2rem;
                     }
-    
+
                     li {
                         margin-bottom: 5px;
                         line-height: 150%;
-                        color:#fff;
-    
+                        color: #fff;
+
                         ul {
                             width: 100%;
                             list-style-type: circle;
-    
+
                             li {
                                 margin-bottom: 5px;
                                 color: #fec919;
@@ -175,13 +246,13 @@ main {
                         }
                     }
                 }
-    
+
                 .list__icons {
                     width: 20%;
                     display: flex;
                     gap: 30px;
                     flex-direction: column;
-    
+
                     img {
                         width: 100%;
                         position: relative;
@@ -191,7 +262,7 @@ main {
                     }
                 }
             }
-    
+
             img.fon {
                 position: absolute;
                 right: 0;
@@ -200,7 +271,7 @@ main {
                 z-index: -1;
             }
         }
-       
+
     }
 
     .reviews {
@@ -237,9 +308,11 @@ main {
             @media(min-width: 768px) {
                 width: 40%;
             }
+
             @media(min-width: 1124px) {
                 width: 28%;
             }
+
             label {
                 font-weight: bold;
                 color: #FEC919;
@@ -290,6 +363,7 @@ main {
             @media(min-width: 768px) {
                 width: calc(60% - 20px);
             }
+
             @media(min-width: 1124px) {
                 width: calc(72% - 20px);
             }
@@ -299,16 +373,20 @@ main {
                 transform-style: preserve-3d;
                 animation: rotate23D 9s infinite linear;
                 box-shadow: -2px 3px 16px 0px #FEC919;
+
                 &:hover {
                     animation: none;
                 }
+
                 h3 {
                     color: #FEC919;
 
                 }
+
                 h4 {
                     color: #aaa;
                 }
+
                 p {
                     color: #f5bd69e1;
                 }
@@ -325,7 +403,7 @@ main {
                 color: #fec919;
                 font-size: 55px;
                 transform-style: preserve-3d;
-                animation: rotate3D  5s infinite linear;
+                animation: rotate3D 5s infinite linear;
             }
 
             .swiper-pagination-bullet {
@@ -372,6 +450,7 @@ main {
         transform: rotateY(0deg) rotateX(0deg);
     }
 }
+
 @keyframes rotate23D {
     0% {
         transform: rotateY(0deg) rotateX(0deg);
@@ -398,6 +477,7 @@ main {
         transform: rotateY(0deg) rotateX(0deg);
     }
 }
+
 footer {
     background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==) left center/contain no-repeat;
     height: 100px;
@@ -408,5 +488,4 @@ footer {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'GTA';
-}
+    font-family: "RDR Lino";}

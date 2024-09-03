@@ -156,3 +156,27 @@ document.querySelector('form').addEventListener('submit', function(e) {
   // })
   // .catch(error => console.error('Fetch error:', error));
 });
+// Знаходимо елемент .promo
+const promo = document.querySelector('.promo');
+
+// Додаємо слухач події scroll до promo
+promo.addEventListener('scroll', function() {
+    // Отримуємо поточну позицію прокрутки всередині promo
+    const scrollPosition = promo.scrollTop;
+
+    const mouse = document.querySelector('.mouse');
+    const services = document.querySelector('.services');
+    // Якщо прокрутка більше ніж на 5 пікселів всередині promo
+    if (scrollPosition > 15) {
+        mouse.classList.add('hidden');  // Ховаємо елемент .mouse
+        promo.classList.add('promo-darkened');  // Додаємо клас затемнення
+        promo.classList.add('promo-scrolled');  // Піднімаємо блок .services
+        services.classList.add('promo-scrolled'); 
+    } else {
+        // Якщо прокрутка менше або дорівнює 5 пікселів
+        mouse.classList.remove('hidden');  // Повертаємо .mouse
+        promo.classList.remove('promo-darkened');  // Видаляємо затемнення
+        promo.classList.remove('promo-scrolled');  // Повертаємо .services
+        services.classList.add('promo-scrolled'); 
+    }
+});
