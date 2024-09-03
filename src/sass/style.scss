@@ -86,12 +86,12 @@ main {
         position: relative;
         height: calc(100vh - 55px);
         overflow: scroll;
-        background-attachment: fixed;
+        // background-attachment: fixed;
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url('../img/fon_tab3.webp');
 
-        @media(min-width: 968px) {
+        @media(min-width: 1000px) {
             height: 95vh;
             background-image: url('../img/fon_desc2.webp');
 
