@@ -86,14 +86,14 @@ main {
         position: relative;
         height: calc(100vh - 55px);
         overflow: scroll;
-        // background-attachment: fixed;
+        background-position-x: 30%;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url('../img/fon_tab3.webp');
+        background-image: url('../img/fon_tab3.jpg');
 
         @media(min-width: 1000px) {
             height: 95vh;
-            background-image: url('../img/fon_desc2.webp');
+            background-image: url('../img/fon_desc2.jpg');
 
         }
 
@@ -113,27 +113,13 @@ main {
 
         }
 
-        // &.promo-scrolled {
-        //     .services {
-        //         transform: translateY(-100%);
-        //     }
-        // }
-        // img.main_img {
-        //     width: 100%;
-        //     object-fit: cover;
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     height: 100%;
-        // }
-
         .mouse {
             width: 50px;
             height: 90px;
             border: 2px solid #FEC919;
             border-radius: 60px;
             position: absolute;
-            bottom: 60px;
+            bottom: 70px;
             left: 50%;
             transform: translateX(-50%);
             box-sizing: border-box;
@@ -169,12 +155,6 @@ main {
     }
 
     .services {
-        // background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==) center center/cover no-repeat;
-
-
-        // position: absolute;
-        // top: 100%;
-        // left: 0;
         margin-top: 100vh;
         width: 100%;
         transition: transform 0.5s ease;
@@ -185,8 +165,6 @@ main {
         }
 
         &__inner {
-            // font-family: 'GTA';
-
             position: relative;
             background-attachment: fixed;
             max-width: 1120px;
@@ -206,7 +184,6 @@ main {
             h1 {
                 color: #fff;
                 text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-                // font-family: GTA;
                 font-weight: 500;
                 font-size: calc(50px + 35 * ((100vw - 320px) / (1120 - 320)));
             }
@@ -287,12 +264,10 @@ main {
         gap: 20px;
         align-items: center;
 
-        // background: #1a1a1a;
         h2 {
             width: 100%;
             color: #fec919;
             font-size: 45px;
-            // text-shadow: 2px 2px 0 #ff0066, 4px 4px 0 #ffcc00;
             margin-bottom: 20px;
         }
 
@@ -488,4 +463,5 @@ footer {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "RDR Lino";}
+    font-family: "RDR Lino";
+}
