@@ -99,6 +99,7 @@ main {
 
         @media (orientation: landscape) {
             min-height: 500px;
+            background-position-y: 110%;
         }
 
         &.promo-darkened:before {
