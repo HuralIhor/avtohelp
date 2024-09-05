@@ -90,7 +90,6 @@ main {
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url('../img/fon_tab3.jpg');
-
         @media(min-width: 1000px) {
             height: 95vh;
             background-image: url('../img/fon_desc2.jpg');
@@ -98,7 +97,7 @@ main {
         }
 
         @media (orientation: landscape) {
-            min-height: 500px;
+            min-height: 450px;
             background-position-y: 110%;
         }
 
